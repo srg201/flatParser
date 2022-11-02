@@ -19,7 +19,7 @@ app.get("/", async (req, res) => {
 const start = async () => {
   try {
     mongoose.connect(process.env.MONGO, () => console.log("DB Connected"));
-    app.listen(5454, () =>
+    app.listen(process.env.PORT || 5454, () =>
       console.log("Server started on: http://localhost:" + 5454)
     );
   } catch (error) {
